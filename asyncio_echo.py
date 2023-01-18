@@ -75,6 +75,8 @@ async def close_echo_task(echo_tasks: List[asyncio.Task]):
     :param echo_tasks: Список[asyncio.Task]
     :type echo_tasks: List[asyncio.Task]
     """
+    # It creates a list of waiters. A waiter is a task that waits for another task to complete. In
+    # this case, we are waiting for each echo task to complete.
     waiters = [asyncio.wait_for(task, 2) for task in echo_tasks]
     for task in waiters:
         try:
