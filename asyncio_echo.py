@@ -66,14 +66,7 @@ def shutdown():
 
 async def close_echo_task(echo_tasks: List[asyncio.Task]):
     """
-    «Дождитесь завершения всех эхо-задач, но если они не завершатся в течение 2 секунд, отмените их».
-    
-    Первая строка функции создает список задач, которые мы хотим дождаться. Вторая строка создает список
-    официантов. Официант — это задача, которая ожидает завершения другой задачи. В этом случае мы ждем
-    завершения каждой эхо-задачи.
-    
-    :param echo_tasks: Список[asyncio.Task]
-    :type echo_tasks: List[asyncio.Task]
+    It raises an exception in 2 seconds
     """
     # It creates a list of waiters. A waiter is a task that waits for another task to complete. In
     # this case, we are waiting for each echo task to complete.
